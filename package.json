@@ -1,0 +1,26 @@
+{
+  "name": "queen-eight",
+  "version": "1.0.0",
+  "description": "An exploration of the Eight Queens problem using Javascript.",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --opts test/mocha.opts",
+    "test:watch": "mocha --opts test/mocha.opts --watch --growl"
+  },
+  "author": "Scotty Eckenthal",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:scottyeck/queen-eight.git"
+  },
+  "bugs": {
+    "url": "https://github.com/scottyeck/queen-eight/issues"
+  },
+  "homepage": "https://github.com/scottyeck/queen-eight",
+  "devDependencies": {
+    "chai": "^3.4.0",
+    "lodash": "^3.10.1",
+    "mocha": "^2.3.3",
+    "rfr": "^1.2.2"
+  }
+}

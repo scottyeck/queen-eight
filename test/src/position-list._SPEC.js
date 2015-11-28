@@ -13,6 +13,16 @@ describe('PositionList()', function() {
 		new Position({x: 2, y: 2})
 	]);
 
+	it('We can check to see if a list contains a position.', function() {
+
+		var presentEntry = new Position({x: 1, y: 1}),
+			absentEntry = new Position({x: 1, y: 2});
+
+		expect(posList.contains(presentEntry)).to.be.true;
+		expect(posList.contains(absentEntry)).to.not.be.true;
+
+	});
+
 	it('We can check if two lists are the same.', function() {
 
 		var sameList = new PositionList([

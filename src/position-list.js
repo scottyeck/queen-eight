@@ -12,6 +12,19 @@ PositionList.prototype.add = function(entry) {
 	this.removeDuplicates();
 }
 
+PositionList.prototype.contains = function(desiredPosition) {
+
+	var entryFound = false;
+
+	_.each(this.entries, function(position) {
+		if (position.isSameAs(desiredPosition)) {
+			entryFound = true;
+		}
+	});
+
+	return entryFound;
+}
+
 PositionList.prototype.containsSameAs = function(posList) {
 
 	var result = true;

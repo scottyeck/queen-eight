@@ -127,4 +127,10 @@ Queen.prototype.getReachable = function() {
 	return reachable;
 }
 
+Queen.prototype.isReachable = function(enemyQueen) {
+
+	var reachable = this.getReachable();
+
+}
+
 module.exports = Queen;

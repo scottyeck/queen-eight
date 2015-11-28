@@ -13,6 +13,4 @@ function Board(config) {
 	this.width = config.width;
 }
 
-
-
 module.exports = Board;

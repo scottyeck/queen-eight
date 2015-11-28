@@ -4,7 +4,8 @@ var expect = require('chai').expect,
 	rfr = require('rfr'),
 	_ = require('lodash');
 
-var Queen = rfr('src/queen'),
+var Board = rfr('src/board'),
+	Queen = rfr('src/queen'),
 	Position = rfr('src/position'),
 	PositionList = rfr('src/position-list');
 
@@ -13,6 +14,18 @@ describe('Queen()', function() {
 	var queen = new Queen({
 		x: 4,
 		y: 5
+	});
+
+	it('We can verify the existence of a Board reference.', function() {
+		expect(function() {
+			queen.verifyBoardRef();
+		}).to.throw;
+
+		queen.board = new Board();
+
+		expect(function() {
+			queen.verifyBoardRef();
+		}).to.not.throw;
 	});
 
 	it('We can construct.', function() {

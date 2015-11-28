@@ -8,7 +8,7 @@ var Board = rfr('src/board'),
 
 function Queen(config) {
 	this.position = new Position(config);
-	this.board = config.board || new Board();
+	this.board = config.board;
 }
 
 Queen.prototype.setPosition = function(position) {
@@ -19,7 +19,16 @@ Queen.prototype.getPosition = function() {
 	return this.position;
 }
 
+Queen.prototype.verifyBoardRef = function() {
+	if (! this.board instanceof Board) {
+		throw Error('This Queen has no Board reference.');
+	}
+	return this;
+}
+
 Queen.prototype.getReachableFromNorth = function() {
+
+	this.verifyBoardRef();
 
 	var pos = this.getPosition().getNeighbor('north'),
 		reachable = new PositionList();
@@ -41,6 +50,8 @@ Queen.prototype.getReachableFromNorth = function() {
 
 Queen.prototype.getReachableFromEast = function() {
 
+	this.verifyBoardRef();
+
 	var pos = this.getPosition().getNeighbor('east'),
 		reachable = new PositionList();
 
@@ -61,6 +72,8 @@ Queen.prototype.getReachableFromEast = function() {
 
 Queen.prototype.getReachableFromNorthEast = function() {
 
+	this.verifyBoardRef();
+
 	var pos = this.getPosition().getNeighbor('northeast'),
 		reachable = new PositionList();
 
@@ -80,6 +93,8 @@ Queen.prototype.getReachableFromNorthEast = function() {
 }
 
 Queen.prototype.getReachableFromNorthWest = function() {
+
+	this.verifyBoardRef();
 
 	var pos = this.getPosition().getNeighbor('northwest'),
 		reachable = new PositionList();
